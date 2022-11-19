@@ -1,0 +1,18 @@
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.buttons-flex {
+ display: -webkit-flex;
+ display: flex;
+ -webkit-justify-content: space-between;
+ justify-content: space-between;
+}
+
+.buttons-flex > button {
+  width: 100%;
+}

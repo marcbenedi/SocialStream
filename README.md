@@ -1,21 +1,14 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Social Stream
+# AngularChromeExtension
 
-My Chrome Extension
+This is a demonstration project for developing Chrome extension within Angular ecosystem. 
 
-## Features
+Features: 
+ - Angular 14
+ - Google Chrome Extension (use [this](https://github.com/just-jeb/angular-chrome-extension/tree/manifest-v3) branch for v3)
+ - Background/Content script live reload (currently only works for manifest v2, see [open issue](https://github.com/SimplifyJobs/webpack-ext-reloader/issues/28))
 
-- Feature 1
-- Feature 2
+## Related article
+[![](https://miro.medium.com/max/1920/1*yPzpouKBY1mORRbnnUSviA.png)](https://www.justjeb.com/post/chrome-extension-with-angular-from-zero-to-a-little-hero)
 
-## Install
-
-[**Chrome** extension]() <!-- TODO: Add chrome extension link inside parenthesis -->
-
-## Contribution
-
-Suggestions and pull requests are welcomed!.
-
----
-
-This project was bootstrapped with [Chrome Extension CLI](https://github.com/dutiyesh/chrome-extension-cli)
-
+## Related talk
+[![](http://img.youtube.com/vi/T1gLcRa2Fm0/0.jpg)](http://www.youtube.com/watch?v=T1gLcRa2Fm0)

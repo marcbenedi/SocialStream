@@ -1,0 +1,8 @@
+<h1>
+  🔎 Find item 🔎
+</h1>
+<hr>
+
+<div *ngIf="isNetflixSearch && isShowFound">Fucker it's there</div>
+<div *ngIf="isNetflixSearch && !isShowFound">we look for you</div>
+<ng-template *ngIf="!isNetflixSearch">🙇 Results not available, go to a streaming platform and search for a show.</ng-template>
