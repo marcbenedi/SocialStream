@@ -11,24 +11,15 @@ export class FindItemComponent implements OnInit {
 
   isNetflixSearch: Boolean;
   isShowFound: Boolean;
+  apiResult: Array<any> | null;
 
   constructor(private zone:NgZone, private http:HttpClient) {
     this.isNetflixSearch = false;
     this.isShowFound = false;
+    this.apiResult = null;
   }
 
   ngOnInit(): void { 
-
-    this.http.get('http://localhost:5000/find/top%20gun').toPromise()
-      .then((i) => {
-        console.log('i', i)
-      })
-      .catch((e) => {
-        console.log('e', e)
-      })
-      .finally(() => {
-        console.log('f')
-      })
 
     let searchText = ''
 
@@ -65,6 +56,19 @@ export class FindItemComponent implements OnInit {
               }
             });
             console.log('is found', this.isShowFound);
+            if (!this.isShowFound) {
+              this.http.get('http://localhost:5000/find/' + encodeURIComponent(searchText)).toPromise()
+                .then((i: any) => {
+                  console.log('i', i)
+                  this.apiResult = i
+                })
+                .catch((e) => {
+                  console.log('e', e)
+                })
+                .finally(() => {
+                  console.log('f')
+                })
+            }
           });
         });
     });

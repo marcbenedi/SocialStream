@@ -1,4 +1,11 @@
-# AngularChromeExtension
+# Social Stream
+
+ng build --watch
+python3 main.py
+
+
+
+
 
 This is a demonstration project for developing Chrome extension within Angular ecosystem. 
 

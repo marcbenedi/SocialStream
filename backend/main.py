@@ -9,18 +9,18 @@ app = Flask(__name__)
 CORS(app)
 
 # st = time.time()
-# ap = pd.read_json("streampicker/ap.json")
+# ap = pd.read_json("data/streampicker/ap.json")
 # print("Amazon loaded in ", time.time() - st , " seconds")
-st = time.time()
-nf = pd.read_json("data/streampicker/nf.json")
-print("Netflix loaded in ", time.time() - st , " seconds")
 # st = time.time()
-# dp = pd.read_json("streampicker/dp.json")
+# nf = pd.read_json("data/streampicker/nf.json")
+# print("Netflix loaded in ", time.time() - st , " seconds")
+# st = time.time()
+# dp = pd.read_json("data/streampicker/dp.json")
 # print("Disney+ loaded in ", time.time() - st , " seconds")
 data = {
-        "Amazon Prime":{},
-        "Disney+":{},
-        "Netflix": nf.drop_duplicates(subset=["otitle"])
+        "Amazon Prime": {}, #ap.drop_duplicates(subset=["otitle"]),
+        "Disney+": {}, #dp.drop_duplicates(subset=["otitle"]).iloc[:1000],
+        "Netflix": {}, #nf.drop_duplicates(subset=["otitle"])
         }
 
 
@@ -55,6 +55,7 @@ def compute_match_score(genres,data):
 
 @app.route("/find/<name>")
 def find(name):
+    return jsonify([{'name': 'show 1', 'platform': 'Amazon', 'url': 'https://google.com', 'image': 'https://i.imgur.com/s9NR21pl.png'}])
     ret = []
     for k in data.keys():
 
