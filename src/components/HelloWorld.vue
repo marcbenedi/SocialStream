@@ -1,10 +1,12 @@
 <template>
   <div>
     <p>{{ defaultText }}</p>
+    <b-button>hola</b-button>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   mounted () {
