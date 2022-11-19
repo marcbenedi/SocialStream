@@ -1,4 +1,4 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Socialstream
+# <img src="public/icons/icon_48.png" width="45" align="left"> Social Stream
 
 My Chrome Extension
 

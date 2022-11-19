@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Socialstream",
+  "name": "Social Stream",
   "version": "0.1.0",
   "description": "My Chrome Extension",
   "icons": {
@@ -13,11 +13,12 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Socialstream",
+    "default_title": "Social Stream",
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "tabs"
   ],
   "content_scripts": [
     {

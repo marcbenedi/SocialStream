@@ -95,7 +95,22 @@ import './popup.css';
     });
   }
 
+  function checkTab() {
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+      let url = tabs[0].url;
+      console.log(url);
+
+      if (url.includes('netflix.com')) {
+        document.getElementById('isNetflix').innerHTML = 'In Netflix'
+      } else {
+        document.getElementById('isNetflix').innerHTML = 'Not in Netflix'
+      }
+    });
+
+  }
+
   document.addEventListener('DOMContentLoaded', restoreCounter);
+  document.addEventListener('DOMContentLoaded', checkTab);
 
   // Communicate with background file by sending a message
   chrome.runtime.sendMessage(
