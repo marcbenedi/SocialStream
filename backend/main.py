@@ -68,7 +68,7 @@ def find(name):
                     posters = "No poster available"
 
                 platform = k
-                ret.append([name,platform,link,posters])
+                ret.append({'name': name, 'platform': platform, 'url': link, 'image': posters})
     return jsonify(ret)
 
 
@@ -99,7 +99,7 @@ def related(name):
                     print(e)
                     posters = "No poster available"
                 platform = k
-                ret.append([match,platform,link,posters])
+                ret.append({'name':match, 'platform': platform, 'url': link, 'image': posters})
 
     # print(ret)
     return jsonify(ret)
