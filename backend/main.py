@@ -17,9 +17,11 @@ print("Netflix loaded in ", time.time() - st , " seconds")
 # st = time.time()
 # dp = pd.read_json("streampicker/dp.json")
 # print("Disney+ loaded in ", time.time() - st , " seconds")
-data = {"Amazon Prime":{},
-            "Disney+":{},
-            "Netflix": nf.drop_duplicates(subset=["otitle"])}
+data = {
+        "Amazon Prime":{},
+        "Disney+":{},
+        "Netflix": nf.drop_duplicates(subset=["otitle"])
+        }
 
 
 for k in data.keys():
@@ -40,7 +42,6 @@ users = {"kerem":{},"marc":{}}
 def hello():
     return "Hello World!"
 
-
 def compute_match_score(genres,data):
     scores = np.zeros(len(data))
     for idx,k in enumerate(data.values):
@@ -51,7 +52,7 @@ def compute_match_score(genres,data):
 
     top5 = np.argpartition(scores, -5)[-5:]
     return top5
-    # pass
+
 @app.route("/find/<name>")
 def find(name):
     ret = []
@@ -74,7 +75,6 @@ def find(name):
 
 @app.route("/mood/<mood>")
 def mood(mood):
-    #maybe make it only one
     return "my mood is {}".format(str(mood))
 
 @app.route("/related/<name>")
@@ -101,7 +101,6 @@ def related(name):
                 platform = k
                 ret.append({'name':match, 'platform': platform, 'url': link, 'image': posters})
 
-    # print(ret)
     return jsonify(ret)
 if __name__ == "__main__":
     app.run(debug=True)
