@@ -1,13 +1,29 @@
 <h1 style="text-align: center;">
-  Recommendations!
+  👀 Recommendations! 👀
 </h1>
 
 <hr>
 
-<ul>
-  <li *ngFor="let item of apiResult; let i = index">
-    <img src="{{item.image}}" style="width:100px;"/>
-    {{item.name}} - <a href="{{item.url}}" target="_blank"> Watch in: {{item.platform}} </a>
+<ul class="list-group">
+  <li *ngFor="let item of apiResult; let i = index" class="list-group-item">
+
+    <div class="container text-left">
+      <div class="row align-items-start">
+      
+      <div class="col">
+        <img src="{{item.image}}" style="width:100px;"/>
+      </div>
+      <div class="col">
+        <p>
+          {{item.name}}
+        </p>
+        <p>
+          <a href="{{item.url}}" target="_blank"> Watch in: {{item.platform}} </a>
+        </p>
+
+      </div>
+      </div>
+    </div>
   </li>
 </ul>
 

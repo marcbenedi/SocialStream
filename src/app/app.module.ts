@@ -12,6 +12,7 @@ import { SocialComponent } from './social/social.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {WebcamModule} from 'ngx-webcam';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {WebcamModule} from 'ngx-webcam';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    WebcamModule
+    WebcamModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

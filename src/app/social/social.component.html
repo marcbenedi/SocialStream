@@ -2,12 +2,29 @@
   👯 From your friends 👯
 </h1>
 <hr>
-<!-- <button (click)="shareYours()">Share yours</button> -->
-<!-- <hr> -->
-<ul>
-  <li *ngFor="let user of friends; let i = index">
-    <img src="{{user.stream.image}}" style="width:100px;"/>
-    {{user.name}} is watching {{user.stream.name}} - <a href="{{user.stream.url}}" target="_blank">Join here!</a>
+
+<ul class="list-group">
+  <li *ngFor="let user of friends; let i = index" class="list-group-item">
+
+    <div class="container text-left">
+      <div class="row align-items-start">
+      
+      <div class="col">
+        <img src="{{user.stream.image}}" style="width:100px;"/>
+      </div>
+      <div class="col">
+        <p>
+          {{user.name}} is watching {{user.stream.name}}
+        </p>
+        <p>
+          <a href="{{user.stream.url}}" target="_blank">
+                      Join here
+          </a>
+        </p>
+      </div>
+      </div>
+    </div>
   </li>
 </ul>
+
 

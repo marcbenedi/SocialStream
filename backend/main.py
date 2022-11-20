@@ -56,7 +56,7 @@ def find(name):
             print(e)
             posters = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiT-UHSm6w0Jperb8SitpfoAKeMUE3uynPg5YO-2Drw&s"
 
-        ret.append({"name":name,
+        ret.append({"name":elem['otitle'].item(),
                     "platform":elem["provider"].item(),
                     "url":link,
                     "image":posters}

@@ -8,11 +8,15 @@
 <!--   (colorPickerChange)="updateColor($event)" -->
 <!--   (colorPickerSelect)="colorize()"> -->
 <!-- </span> -->
-<router-outlet></router-outlet>
-<hr>
-<nav class="navbar buttons-flex">
-<button [routerLink]="''">🏠</button>
-<button [routerLink]="'find-item'">🔎</button>
-<button [routerLink]="'mood'">😄</button>
-<button [routerLink]="'social'">👯</button>
+<div class="container-fluid" style="margin-top:15px">
+  <router-outlet></router-outlet>
+</div>
+<!-- <nav class="navbar buttons-flex nav justify-content-center"> -->
+<nav class="navbar fixed-bottom bg-light">
+  <div class="container-fluid">
+    <button type="button" class="btn btn-primary" [routerLink]="''">🏠</button>
+    <button type="button" class="btn btn-primary" [routerLink]="'find-item'">🔎</button>
+    <button type="button" class="btn btn-primary" [routerLink]="'mood'">😄</button>
+    <button type="button" class="btn btn-primary" [routerLink]="'social'">👯</button>
+  </div>
 </nav>
