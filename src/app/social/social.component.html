@@ -1,1 +1,12 @@
-<p>social works!</p>
+<h1 style="text-align: center;">
+  👯 From your friends 👯
+</h1>
+<hr>
+<!-- <button (click)="shareYours()">Share yours</button> -->
+<!-- <hr> -->
+<ul>
+  <li *ngFor="let user of friends; let i = index">
+    {{user.name}} is watching {{user.stream.name}} - <a href="{{user.stream.url}}" target="_blank">Join here!</a>
+  </li>
+</ul>
+

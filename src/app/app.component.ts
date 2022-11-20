@@ -12,7 +12,6 @@ export const getResults = () => {
   return result
 };
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

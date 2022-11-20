@@ -11,12 +11,12 @@ export class FindItemComponent implements OnInit {
 
   isNetflixSearch: Boolean;
   isShowFound: Boolean;
-  apiResult: Array<any> | null;
+  apiResult: Array<any>;
 
   constructor(private zone:NgZone, private http:HttpClient) {
     this.isNetflixSearch = false;
     this.isShowFound = false;
-    this.apiResult = null;
+    this.apiResult = [];
   }
 
   ngOnInit(): void { 
@@ -26,6 +26,7 @@ export class FindItemComponent implements OnInit {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
       this.zone.run(() => {
         let url = tabs[0].url!;
+        console.log('lel la tab', url, url.includes('netflix.com/search'))
         this.isNetflixSearch = url.includes('netflix.com/search')
       });
 

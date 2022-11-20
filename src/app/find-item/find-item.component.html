@@ -1,14 +1,16 @@
-<h1>
+<h1 style="text-align: center;">
   🔎 Find item 🔎
 </h1>
 <hr>
 
-<div *ngIf="isNetflixSearch && isShowFound">Fucker it's there</div>
-<div *ngIf="isNetflixSearch && !isShowFound">we look for you</div>
-<ng-template *ngIf="!isNetflixSearch">🙇 Results not available, go to a streaming platform and search for a show.</ng-template>
+<div *ngIf="isNetflixSearch && isShowFound">😄 Seems that the content is available in Netflix already</div>
+<!-- <div *ngIf="isNetflixSearch && !isShowFound && apiResult.length">we looked - FOUND!</div> -->
+<div *ngIf="isNetflixSearch && !isShowFound && !apiResult.length">🥸 We couldn't find any results in the other platforms</div>
+<div *ngIf="!isNetflixSearch">👷 Functionality not available here, go to a streaming platform and search for a show.</div>
 
 <ul>
   <li *ngFor="let item of apiResult; let i = index">
-    {{i}} {{item.name}}
+    <img src="{{item.image}}" style="width:100px;"/>
+    {{item.name}} - <a href="{{item.url}}" target="_blank"> Watch in: {{item.platform}} </a>
   </li>
 </ul>

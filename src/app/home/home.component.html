@@ -1,11 +1,24 @@
-<h1>
+<h1 style="text-align: center;">
   📺 Welcome to Social Stream! 🎥
 </h1>
 <hr>
 
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="name">Username</label>
+    <input id="name" type="text" [formControl]="name" [disabled]="isSubmitted"/>
+  </div>
+  <button class="button" type="submit" [disabled]="isSubmitted"> Log in </button>
+
+</form>
+
+<div style="position: absolute; width:100%; bottom:20px;">
+<hr>
 Developed by:
 <ul>
-  <li> Marc Benedi - <a href="https://marcb.pro">Web</a>
-  <li> Kerem Yildirir - <a href="https://www.keremyildirir.com/">Web</a>
+  <li> Marc Benedi - <a href="https://marcb.pro" target="_blank">marcb.pro</a>
+  <li> Kerem Yildirir - <a href="https://www.keremyildirir.com/" target="_blank">keremyildirir.com</a>
 </ul> 
+</div>
 

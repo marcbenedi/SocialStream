@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { MoodComponent } from './mood/mood.component';
 import { SocialComponent } from './social/social.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import {WebcamModule} from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { SocialComponent } from './social/social.component';
     BrowserModule,
     ColorPickerModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    WebcamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
