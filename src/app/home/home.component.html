@@ -1,0 +1,24 @@
+<h1 style="text-align: center;">
+  📺 Home 🎥
+</h1>
+<hr>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Username</label>
+    <input id="name" class="form-control" placeholder="username" type="text" [formControl]="name" [disabled]="isSubmitted"/>
+  </div>
+  <button type="button submit" class="button btn btn-primary" [disabled]="isSubmitted"> Log in </button>
+
+</form>
+
+<div style="position: absolute; width:100%;">
+<hr>
+Developed by:
+<ul>
+  <li> Marc Benedi - <a href="https://marcb.pro" target="_blank">marcb.pro</a>
+  <li> Kerem Yildirir - <a href="https://www.keremyildirir.com/" target="_blank">keremyildirir.com</a>
+</ul> 
+</div>
+

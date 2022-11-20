@@ -1,0 +1,23 @@
+{
+  "name": "Social Stream",
+  "version": "1.0",
+  "description": "To stream socially",
+  "manifest_version": 3,
+  "permissions": [
+      "activeTab",
+      "webNavigation",
+      "storage",
+      "scripting",
+      "tabs",
+      "mediaGalleries",
+      "hid",
+      "usb"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+      "default_popup": "index.html"
+  }
+}
