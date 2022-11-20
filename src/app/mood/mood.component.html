@@ -1,4 +1,13 @@
-<p>mood works!</p>
-<webcam></webcam>
-<input type="file" class="file-upload" onchange="console.log(event.target.files)">
-<!-- <h1 style="text-align: center;"> -->
+<h1 style="text-align: center;">
+  Recommendations!
+</h1>
+
+<hr>
+
+<ul>
+  <li *ngFor="let item of apiResult; let i = index">
+    <img src="{{item.image}}" style="width:100px;"/>
+    {{item.name}} - <a href="{{item.url}}" target="_blank"> Watch in: {{item.platform}} </a>
+  </li>
+</ul>
+

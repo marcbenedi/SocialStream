@@ -26,7 +26,6 @@ export class FindItemComponent implements OnInit {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
       this.zone.run(() => {
         let url = tabs[0].url!;
-        console.log('lel la tab', url, url.includes('netflix.com/search'))
         this.isNetflixSearch = url.includes('netflix.com/search')
       });
 

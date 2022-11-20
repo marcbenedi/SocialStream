@@ -6,6 +6,7 @@
 <!-- <hr> -->
 <ul>
   <li *ngFor="let user of friends; let i = index">
+    <img src="{{user.stream.image}}" style="width:100px;"/>
     {{user.name}} is watching {{user.stream.name}} - <a href="{{user.stream.url}}" target="_blank">Join here!</a>
   </li>
 </ul>

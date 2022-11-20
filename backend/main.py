@@ -77,8 +77,7 @@ def related(name):
         ret.append({"name":recoms["otitle"].iloc[k],
                     "platform":recoms["provider"].iloc[k],
                     "url":recoms["url"].iloc[k],
-                    "image":recoms["posters"].iloc[k] if (recoms["posters"].iloc[k]) != None else "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiT-UHSm6w0Jperb8SitpfoAKeMUE3uynPg5YO-2Drw&s"}
-                           )
+                    "image":recoms["posters"].iloc[k].split(',')[0] if (recoms["posters"].iloc[k]) != None else "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiT-UHSm6w0Jperb8SitpfoAKeMUE3uynPg5YO-2Drw&s"})
         print(recoms["posters"].iloc[k])
     # print(ret)
     return jsonify(ret)
@@ -90,6 +89,7 @@ def addUser(name):
                 'name': name,
                 'last_update': time.time(),
                 'stream': {
+                        'image': '',
                         'name': '',
                         'url': '',
                         'time': '',
@@ -106,11 +106,16 @@ def updateUser(name):
     key = content['url'][len('https://www.netflix.com/watch/'):]
     key = key.split('?')[0]
     medianame = ''
+    image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiT-UHSm6w0Jperb8SitpfoAKeMUE3uynPg5YO-2Drw&s'
     if len(data[data['url'].str.contains(key)]) > 0:
         medianame = data[data['url'].str.contains(key)]['otitle'][0]
+        image = data[data['url'].str.contains(key)]['posters'].item().split(',')
+        if len(image) > 1:
+            image = image[0]
 
     users[name]['last_update'] = time.time()
     users[name]['stream']['name'] = medianame
+    users[name]['stream']['image'] = image
     users[name]['stream']['url'] = content['url']
     users[name]['stream']['time'] = content['time']
     users[name]['stream']['isPlaying'] = content['isPlaying']
@@ -123,7 +128,6 @@ def getUsers():
     for _, v in users.items():
         result.append(v)
     return jsonify(result)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
